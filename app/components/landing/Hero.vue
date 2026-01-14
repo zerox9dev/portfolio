@@ -3,9 +3,13 @@ import type { IndexCollectionItem } from '@nuxt/content'
 
 const { footer, global } = useAppConfig()
 
-defineProps<{
+const props = defineProps<{
   page: IndexCollectionItem
 }>()
+
+// Debug
+console.log('Page data:', props.page)
+console.log('Hero links:', props.page?.hero?.links)
 
 // Fetch Dribbble shots
 const { data: dribbbleShots } = await useFetch('/api/dribbble')
@@ -24,7 +28,7 @@ const shots = computed(() => {
     }))
   }
   // Fallback to static images if API fails
-  return page.hero?.images || []
+  return props.page.hero?.images || []
 })
 </script>
 
@@ -104,7 +108,12 @@ const shots = computed(() => {
           delay: 0.1
         }"
       >
-        {{ page.title }}
+        <div class="flex flex-col gap-2">
+          <p v-if="page.subtitle" class="text-sm text-muted font-normal tracking-wide" style="font-family: 'Inter', sans-serif; font-weight: 400;">
+            {{ page.subtitle }}
+          </p>
+          <h1>{{ page.title }}</h1>
+        </div>
       </Motion>
     </template>
 
@@ -125,7 +134,7 @@ const shots = computed(() => {
           delay: 0.3
         }"
       >
-        {{ page.description }}
+        <p class="whitespace-pre-line">{{ page.description }}</p>
       </Motion>
     </template>
 
@@ -146,11 +155,11 @@ const shots = computed(() => {
           delay: 0.5
         }"
       >
-        <div
-          v-if="page.hero.links"
-          class="flex items-center gap-2"
-        >
-          <UButton v-bind="page.hero.links[0]" />
+        <div class="flex flex-col items-center gap-3">
+          <UButton 
+            v-if="page.hero?.links?.[0]"
+            v-bind="page.hero.links[0]" 
+          />
           <UButton
             :color="global.available ? 'success' : 'error'"
             variant="ghost"

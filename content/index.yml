@@ -1,8 +1,9 @@
 seo:
   title: "Vadym M - UX/UI Designer"
   description: "Welcome to my portfolio! I'm Emma Thompson, a UX/UI designer and front-end developer based in Boston. I specialize in creating user-centered digital experiences that are both beautiful and functional."
-title: "I design products people trust and love"
-description: "I’m Vadym, a product-thinking designer with 6+ years of experience, partnering with founders to craft meaningful, high-converting design."
+subtitle: "6+ years · products with 1M+ users · marketplaces & fintech"
+title: "Product Designer for SaaS & Fintech"
+description: "I help teams improve onboarding and core product flows\nusing UX, data, and fast prototyping."
 hero:
   links:
     - label: "Start a project"
