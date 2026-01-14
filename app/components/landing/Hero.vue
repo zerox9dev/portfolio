@@ -6,6 +6,26 @@ const { footer, global } = useAppConfig()
 defineProps<{
   page: IndexCollectionItem
 }>()
+
+// Fetch Dribbble shots
+const { data: dribbbleShots } = await useFetch('/api/dribbble')
+const shots = computed(() => {
+  if (dribbbleShots.value && Array.isArray(dribbbleShots.value)) {
+    // Sort by date (newest first)
+    const sorted = [...dribbbleShots.value].sort((a: any, b: any) => {
+      const dateA = new Date(a.published_at || a.created_at).getTime()
+      const dateB = new Date(b.published_at || b.created_at).getTime()
+      return dateB - dateA
+    })
+    
+    return sorted.map((shot: any) => ({
+      src: shot.images?.hidpi || shot.images?.normal || shot.images?.teaser || shot.image_url,
+      alt: shot.title || 'Dribbble shot'
+    }))
+  }
+  // Fallback to static images if API fails
+  return page.hero?.images || []
+})
 </script>
 
 <template>
@@ -160,7 +180,7 @@ defineProps<{
       class="py-2 -mx-8 sm:-mx-12 lg:-mx-16 [--duration:40s]"
     >
       <Motion
-        v-for="(img, index) in page.hero.images"
+        v-for="(img, index) in shots"
         :key="index"
         :initial="{
           scale: 1.1,
@@ -177,12 +197,13 @@ defineProps<{
           delay: index * 0.1
         }"
       >
-        <NuxtImg
+        <img
+          :src="img.src"
+          :alt="img.alt"
           width="234"
           height="234"
           class="rounded-lg aspect-square object-cover"
           :class="index % 2 === 0 ? '-rotate-2' : 'rotate-2'"
-          v-bind="img"
         />
       </Motion>
     </UMarquee>

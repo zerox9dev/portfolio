@@ -10,6 +10,15 @@ export default defineNuxtConfig({
     'motion-v/nuxt'
   ],
 
+  runtimeConfig: {
+    dribbbleClientId: process.env.DRIBBBLE_CLIENT_ID || '',
+    dribbbleClientSecret: process.env.DRIBBBLE_CLIENT_SECRET || '',
+    dribbbleAccessToken: process.env.DRIBBBLE_ACCESS_TOKEN || '',
+    public: {
+      dribbbleUsername: process.env.DRIBBBLE_USERNAME || 'zerox9dev'
+    }
+  },
+
   image: {
     quality: 95,
     densities: [1, 2],

@@ -78,11 +78,6 @@ useSeoMeta({
             wrapper: 'max-sm:order-last'
           }"
         >
-          <template #leading>
-            <span class="text-sm text-muted">
-              {{ new Date(project.date).getFullYear() }}
-            </span>
-          </template>
           <template #footer>
             <ULink
               :to="project.url"
