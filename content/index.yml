@@ -1,11 +1,11 @@
 seo:
-  title: "Emma Thompson - UX/UI Designer"
+  title: "Vadym M - UX/UI Designer"
   description: "Welcome to my portfolio! I'm Emma Thompson, a UX/UI designer and front-end developer based in Boston. I specialize in creating user-centered digital experiences that are both beautiful and functional."
-title: "Hey, I'm Emma Thompson UX/UI Designer"
-description: "I craft intuitive digital experiences where design meets functionality. Based in Boston, bringing ideas to life through code and creativity."
+title: "I design products people trust and love"
+description: "I’m Vadym, a product-thinking designer with 6+ years of experience, partnering with founders to craft meaningful, high-converting design."
 hero:
   links:
-    - label: "Use this template"
+    - label: "Start a project"
       to: https://github.com/nuxt-ui-templates/portfolio
       color: "neutral"
   images:
@@ -35,24 +35,24 @@ about:
 experience:
   title: Work Experience
   items:
-    - position: "Brand Designer at"
-      date: "2023 - Present"
+    - position: "Product Designer"
+      date: "2023 - 2025"
       company:
-        name: Nuxt
+        name: FreelanceHunt
         logo: "i-simple-icons-nuxtdotjs"
-        url: "https://nuxt.com"
+        url: "https://freelancehunt.com/"
         color: "#00DC82"
     - position: "Assets Designer at"
-      date: "2022 - 2023"
+      date: "2021 - 2022"
       company:
-        name: Raycast
+        name: Holyheld
         logo: "i-simple-icons-raycast"
-        url: "https://raycast.com"
+        url: "https://holyheld.com
         color: "#FF6363"
-    - position: "Senior UX/UI Designer at"
-      date: "2020 - 2021"
+    - position: "UX/UI Designer at"
+      date: "2019 - Present"
       company:
-        name: Linear
+        name: Freelance
         logo: "i-simple-icons-linear"
         url: "https://linear.app"
         color: "#5E6AD2"
