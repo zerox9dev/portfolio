@@ -10,6 +10,16 @@ export default defineNuxtConfig({
     'motion-v/nuxt'
   ],
 
+  image: {
+    quality: 95,
+    densities: [1, 2],
+    format: ['png'],
+    provider: 'ipx',
+    ipx: {
+      maxAge: 60 * 60 * 24 * 365
+    }
+  },
+
   devtools: {
     enabled: true
   },
