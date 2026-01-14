@@ -17,28 +17,54 @@ defineProps<{
     }"
   >
     <template #headline>
-      <Motion
-        :initial="{
-          scale: 1.1,
-          opacity: 0,
-          filter: 'blur(20px)'
-        }"
-        :animate="{
-          scale: 1,
-          opacity: 1,
-          filter: 'blur(0px)'
-        }"
-        :transition="{
-          duration: 0.6,
-          delay: 0.1
-        }"
-      >
-        <img
-          src="/avatar.png"
-          alt="My profile picture"
-          class="size-24 rounded-full ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
-        />
-      </Motion>
+      <div class="flex flex-col items-center gap-2">
+        <Motion
+          :initial="{
+            scale: 1.1,
+            opacity: 0,
+            filter: 'blur(20px)'
+          }"
+          :animate="{
+            scale: 1,
+            opacity: 1,
+            filter: 'blur(0px)'
+          }"
+          :transition="{
+            duration: 0.6,
+            delay: 0.1
+          }"
+        >
+          <img
+            src="/avatar.png"
+            alt="My profile picture"
+            class="size-24 rounded-full ring ring-default ring-offset-3 ring-offset-(--ui-bg)"
+          />
+        </Motion>
+        <Motion
+          :initial="{
+            scale: 1.1,
+            opacity: 0,
+            filter: 'blur(20px)'
+          }"
+          :animate="{
+            scale: 1,
+            opacity: 1,
+            filter: 'blur(0px)'
+          }"
+          :transition="{
+            duration: 0.6,
+            delay: 0.2
+          }"
+        >
+          <p class="text-sm text-muted flex items-center gap-1">
+            Founder at
+            <a href="https://znaidy.com?utm_source=portfolio&utm_medium=website&utm_campaign=founder_link" target="_blank" class="inline-flex items-center gap-1 hover:opacity-80 transition-opacity">
+              <img src="/znaidy.png" alt="Znaidy" class="size-4 rounded-full" />
+              Znaidy
+            </a>
+          </p>
+        </Motion>
+      </div>
     </template>
 
     <template #title>
